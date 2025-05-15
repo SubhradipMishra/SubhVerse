@@ -73,18 +73,6 @@ const About = () => {
             box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
             transition: transform 0.3s ease;
           }
-
-          .animated-line {
-            position: absolute;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #34d399, #86efac, #34d399);
-            background-size: 400% 400%;
-            animation: glowMove 5s linear infinite;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 9999px;
-          }
         `}
       </style>
 
@@ -105,22 +93,8 @@ const About = () => {
           ))}
         </h2>
 
-        {/* Timeline + Content Section */}
-        <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto items-start">
-          {/* Timeline Line */}
-          <div className="relative flex flex-row lg:flex-col items-center justify-center">
-            <div className="animated-line hidden lg:block"></div>
-            {[1, 2, 3, 4].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-4 h-4 bg-green-400 rounded-full z-10 mx-4 lg:mx-0 my-2 shadow-md"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: i * 0.2, type: "spring", stiffness: 200 }}
-              />
-            ))}
-          </div>
-
+        {/* Content Section (No timeline or line design) */}
+        <div className="flex flex-col-reverse lg:flex-row gap-12 max-w-7xl mx-auto items-center">
           {/* Text Content */}
           <div className="flex-1 space-y-5 text-base sm:text-lg leading-relaxed px-2">
             {[
